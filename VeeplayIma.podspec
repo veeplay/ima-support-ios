@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VeeplayIma"
-  s.version          = "1.1"
+  s.version          = "1.2"
   s.summary          = "Veeplay Google IMA SDK Plugin"
   s.homepage         = "http://veeplay.com"
   s.license          = { :type => "Commercial", :text => "Contact office@veeplay.com" }
