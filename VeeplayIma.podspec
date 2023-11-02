@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name             = "VeeplayIma"
-  s.version          = "1.2.1"
+  s.version          = "1.2.2"
   s.summary          = "Veeplay Google IMA SDK Plugin"
   s.homepage         = "http://veeplay.com"
   s.license          = { :type => "Commercial", :text => "Contact office@veeplay.com" }
   s.author           = { "Veeplay" => "gabi@veeplay.com" }
   s.source           = { :git => "https://github.com/veeplay/ima-support-ios.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, "11.0"
+  s.platform     = :ios, "13.0"
   s.requires_arc = true
 
   s.documentation_url = 'http://veeplay.github.io/ima-support-ios/'
@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   s.vendored_libraries   = "libVeeplayIma.a"
 
   s.dependency "Veeplay"
-  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.14.5"
+  s.dependency "GoogleAds-IMA-iOS-SDK", "~> 3.19.2"
 end
