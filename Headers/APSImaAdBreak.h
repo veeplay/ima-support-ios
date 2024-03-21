@@ -7,22 +7,38 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "APSMediaPlayer.h"
 
 @class APSVASTAdBreak;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @protocol APSImaAdBreakProtocol
 
-- (instancetype) initWithAdBreak:(APSVASTAdBreak *)adBreak;
+- (instancetype _Nullable) initWithAdBreak:(APSVASTAdBreak *_Nonnull)adBreak;
 - (void) trigger;
 
-@property (weak, readonly, nonatomic) APSVASTAdBreak *adBreak;
+@property (weak, readonly, nonatomic) APSVASTAdBreak *_Nullable adBreak;
 
 @end
 
 @interface APSImaAdBreak : NSObject <APSImaAdBreakProtocol>
-@property (weak, readonly, nonatomic) APSVASTAdBreak *adBreak;
+@property (weak, readonly, nonatomic) APSVASTAdBreak *_Nullable adBreak;
 @end
 
-NS_ASSUME_NONNULL_END
+@interface APSMediaPlayer (APSImaAdBreak)
+@property (nonatomic, strong) APSImaAdBreak *_Nullable _currentImaAdBreak;
+
+/**
+ *  Returns `YES` if an Google IMA ad is currently playing
+ */
+- (BOOL) isPlayingImaAd;
+
+/**
+ *  Returns the current playing Google IMA ad, or `nil` if no such ad is playing
+ */
+- (APSImaAdBreak * _Nullable) getCurrentImaAdBreak;
+
+/**
+ *  Sets the current playing Google IMA ad
+ */
+- (void) setCurrentImaAdBreak:(APSImaAdBreak * _Nullable) imaAdBreak;
+@end
